@@ -1,0 +1,74 @@
+.app {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background-image: linear-gradient(to right, rgb(102, 255, 102), cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__header {
+    margin: 0 0 16px 0 !important;
+  }
+  .task__list {
+    width: 100%;
+    & > div:first-child {
+      width: 100%;
+      ul {
+        margin-top: 20px;
+        overflow-y: scroll;
+        max-height: 430px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px !important;
+
+        &::-webkit-scrollbar {
+          width: 10px;
+          background-color: rgba(255, 255, 255, 0.473);
+        }
+        &::-webkit-scrollbar-thumb {
+          width: 10px;
+          border-radius: 10px;
+          background-color: rgba(255, 255, 255, 0.897);
+        }
+        ul > div {
+          height: 60px;
+        }
+        .task__list__item {
+          padding: 5px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          border-radius: 10px;
+          background-color: rgba(255, 255, 255, 0.452);
+          .task__item__content {
+            flex-grow: 1;
+
+            &.task--complete{
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.container {
+  width: 40%;
+  height: 80%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.541);
+  padding: 30px;
+
+  .add__container,
+  form {
+    width: 100%;
+    display: flex;
+    & > div:first-child {
+      width: 100%;
+    }
+    input {
+      width: 80%;
+    }
+  }
+}
